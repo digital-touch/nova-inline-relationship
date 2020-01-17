@@ -91,9 +91,14 @@
             },
 
             label() {
-                return this.field.singular
-                    ? this.field.singularLabel
-                    : `${this.field.singularLabel} ${this.id + 1}`;
+                //return this.field.singular
+                    //? this.field.singularLabel
+                    //: `${this.field.singularLabel} ${this.id + 1}`;
+              if (this.fieldName === '') {
+                return ''
+              }
+
+              return this.fieldName || this.field.singularLabel || this.field.name || `${this.field.singularLabel} ${this.id + 1}`                 
             }
         },
 
